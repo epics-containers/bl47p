@@ -8,7 +8,7 @@ set -e
 
 for ioc in ${THIS_DIR}/iocs/*
 do
-    # Skip if subfolder is not an IOC definition
+    # Skip if subfolder has no config to validate
     if [ ! -d "${ioc}/config" ]; then
         continue
     fi
