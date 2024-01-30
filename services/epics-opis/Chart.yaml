@@ -2,11 +2,14 @@
 apiVersion: v2
 name: epics-opis
 
-version: 1.0.0
+# This is the version number of the dependency chart for convenience
+version: 1.4.0
+# When we deploy with the edge-containers-cli we override this on the command line.
+appVersion: 0.0.1b1
 
 type: application
 
 dependencies:
-  - name: domain-opis
-    version: "1.0.0"
+  - name: epics-opis
+    version: "1.4.0"
     repository: "oci://ghcr.io/epics-containers"
