@@ -1,0 +1,12 @@
+# A Helm Chart for an IOC instance
+apiVersion: v2
+name: ioc-instance-beamline
+
+version: 0.3.15
+
+type: application
+
+dependencies:
+  - name: blueapi
+    version: "0.3.15"
+    repository: "https://github.com/DiamondLightSource/blueapi/pkgs/container/charts%2Fblueapi"
