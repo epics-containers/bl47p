@@ -1,14 +1,7 @@
-# A Helm Chart for an IOC instance
+# A Helm Chart for adding arbitrary configuration to a service instance
 apiVersion: v2
-name: ioc-instance-beamline
+name: instance-config
 
-# Match the underlying chart version for easy identification
-version: 1.4.0
+version: 1.0.0
 
 type: application
-
-dependencies:
-  - name: ioc-instance
-    version: "1.4.0"
-    repository: "oci://ghcr.io/epics-containers"
-    #repository: "file:///scratch/hgv27681/work/ec-helm-charts/Charts/beamline-chart"

@@ -1,0 +1,23 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name:  {{ .Values.ioc_name }}
+  labels:
+    app: {{ .Values.ioc_name }}
+    beamline: {{ .Values.beamline }}
+    ioc_version: {{ .Values.ioc_version | quote }}
+    is_ioc: "True"
+data:
+
+{{- /*
+  add the contents of every file in the config folder of this IOC helm chart
+  into the config map - The files must be text only.
+
+  Also add a version.txt file that contains the version of the IOC
+*/ -}}
+
+{{ (.Files.Glob "../conig/*").AsConfig | indent 2 }}
+  version.txt: |
+    "IOC {{ .Values.ioc_name }} version {{ .Values.ioc_version }}""
+
