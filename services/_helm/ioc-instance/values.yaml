@@ -1,5 +1,4 @@
-# default values for all IOCs on bl38p
-# see end of file for values that may be overridden per individual IOC
+# default values for all IOCs on bl47p beamline
 
 beamline: bl47p
 # we use the default service account in the namespace so leave this out
