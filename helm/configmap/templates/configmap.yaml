@@ -4,16 +4,12 @@ kind: ConfigMap
 metadata:
   name:  {{ .Release.name }}-config
   labels:
-    app: {{ .Release.name }}
+    app: {{ .Values.ioc_name }}
 data:
 
 {{- /*
   add the contents of every file in the config folder of this IOC helm chart
   into the config map - The files must be text only.
-
-  Also add a version.txt file that contains the version of the IOC
 */ -}}
 
 {{ (.Files.Glob "../../config/*").AsConfig | indent 2 }}
-  version.txt: |
-    "IOC {{ .Release.Name }} version {{ .Release.Version }}""
