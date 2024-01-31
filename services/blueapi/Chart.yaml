@@ -2,8 +2,7 @@
 apiVersion: v2
 name: blueapi
 
-# This is the version number of the dependency chart for convenience
-version: 0.3.15
+version: 1.0.0
 
 type: application
 
