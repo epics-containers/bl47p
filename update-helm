@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# force refresh all helm dependencies #############
+
+THIS=$(realpath $(dirname $0))
+
+# remove all locks and chart caches
+for i in $(find ${THIS} -name *.lock) $(find ${THIS} -name charts); do
+  rm -r $i
+done
+
+# rebuild dependencies (depth first)
+for i in helm/* services/*; do
+  helm dependency build $i
+done
