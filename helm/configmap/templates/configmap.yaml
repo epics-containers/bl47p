@@ -6,5 +6,6 @@ metadata:
     app: {{ .Release.Name }}
 data:
 
-# ---- contents of the ioc instance config folder ----------------------------
-{{ (.Files.Glob "services/bl47p-ea-test-01/config/**").AsConfig | indent 2 }}
+{{- $configPath := printf "services/%s/config/**" .Release.Name }}
+# contents of the ioc instance config folder
+{{ (.Files.Glob $configPath).AsConfig | indent 2 }}
