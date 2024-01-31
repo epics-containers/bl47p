@@ -6,9 +6,5 @@ metadata:
     app: {{ .Release.Name }}
 data:
 
-{{- /*
-  add the contents of every file in the config folder of this IOC helm chart
-  into the config map - The files must be text only.
-*/ -}}
-
-{{ (.Files.Glob "../../*").AsConfig | indent 2 }}
+# ---- contents of the ioc instance config folder ----------------------------
+{{ (.Files.Glob "services/bl47p-ea-test-01/config/**").AsConfig | indent 2 }}
