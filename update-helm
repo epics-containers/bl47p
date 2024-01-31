@@ -11,5 +11,7 @@ done
 
 # rebuild dependencies (depth first)
 for i in helm/* services/*; do
-  helm dependency build $i
+  if [ -f $i/Chart.yaml ]; then
+    helm dependency build $i
+  fi
 done
