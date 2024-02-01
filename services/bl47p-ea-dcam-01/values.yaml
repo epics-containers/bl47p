@@ -1,2 +1,4 @@
 # latest container image for GigE cameras from the GitHub Container Registry
-image: ghcr.io/epics-containers/ioc-adaravis-linux-runtime:2024.1.2
+beamline:
+  ioc-instance:
+    image: ghcr.io/epics-containers/ioc-adaravis-linux-runtime:2024.1.2
